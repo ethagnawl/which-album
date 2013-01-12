@@ -45,7 +45,7 @@ get '/search' do
       end.sort_by do |t|
         t['album']['released'].to_i
       end.map do |t|
-        "The song #{t['name']} appeared on #{t['artists'].first['name']}'s #{t['album']['name']} which was released in #{t['album']['released']}"
+        "#{t['name']} appeared on #{t['artists'].first['name']}'s #{t['album']['name']} which was released in #{t['album']['released']}"
       end
 
       if results.length > 0
