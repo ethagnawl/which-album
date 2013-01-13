@@ -39,4 +39,6 @@
     %script{src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'}
     %script{src: 'spin.js'}
     %script{src: 'which_record.js'}
+    - if ENV['RACK_ENV'] == "production"
+      %script{src: 'ganalytics.js'}
 
