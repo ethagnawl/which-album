@@ -48,6 +48,8 @@ get '/search' do
         "#{t['name']} appeared on #{t['artists'].first['name']}'s #{t['album']['name']} which was released in #{t['album']['released']}."
       end
 
+      results = results.uniq
+
       if results.length > 0
         {message: 'Success!', results: results}.to_json
       else
