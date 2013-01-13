@@ -9,7 +9,7 @@ require 'json'
 API_URL = 'http://ws.spotify.com/search/1/track.json?q='
 NO_RESULTS = {message: 'No results!'}
 ERROR = {message: 'Something went wrong, please refresh the page and try again.'}
-GA_ID = ENV['GA_ID'] if RACK['RACK_ENV'] == 'production'
+GA_ID = ENV['GA_ID'] if ENV['RACK_ENV'] == 'production'
 
 get '/' do
   @sample = [
