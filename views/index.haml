@@ -42,5 +42,6 @@
     %script{src: 'spin.js'}
     %script{src: 'which_record.js'}
     - if ENV['RACK_ENV'] == "production"
+      window.GA_ID = "#{GA_ID}";
       %script{src: 'ganalytics.js'}
 
