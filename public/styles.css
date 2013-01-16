@@ -13,5 +13,11 @@ body {
 }
 
 .container {
-    padding-top: 4%;
+    padding-top: 2%;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 2%;
 }
