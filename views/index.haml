@@ -13,22 +13,26 @@
   %body
     .navbar.navbar-static-top.navbar-inverse
       .navbar-inner
-        %a.brand{ href: '/' } Which-Album.com
+        %h1
+          %a.brand{ href: '/' }
+            Which-Album.com
     .container
       #spinner_wrapper
         #spinner
-      %form.form-horizontal{ autocorrect: 'off', autocapitalize: 'off' }
-        %legend
-          Which album is that song on?
+      %h2
+        Which album is that song on?
+      %form.form-horizontal
         .control-group
           %label.control-label
             Artist
           .controls
-            %input#artist{ name: 'artist', required: true, placeholder: @sample[:artist] }
+            %input#artist{ name: 'artist', required: true,
+              placeholder: @sample[:artist], pattern: '^\S+' }
         .control-group
           %label.control-label Song
           .controls
-            %input#song{ name: 'song', required: true, placeholder: @sample[:song] }
+            %input#song{ name: 'song', required: true,
+              placeholder: @sample[:song], pattern: '^\S+' }
         .control-group
           .controls
             %input#submit.btn.btn-success{ type: 'submit', value: 'Search' }
