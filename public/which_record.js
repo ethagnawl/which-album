@@ -19,8 +19,8 @@ $(function () {
     $('form').submit(function (e) {
         e.preventDefault();
 
-        var artist = $('#artist').val();
-        var song = $('#song').val();
+        var artist = $.trim($('#artist').val());
+        var song = $.trim($('#song').val());
         var data = $(this).serialize();
 
         $.ajax({
