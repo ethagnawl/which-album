@@ -27,12 +27,12 @@
             Artist
           .controls
             %input#artist{ name: 'artist', required: true,
-              placeholder: @sample[:artist], pattern: '^\S+' }
+              placeholder: @sample[:artist] }
         .control-group
           %label.control-label Song
           .controls
             %input#song{ name: 'song', required: true,
-              placeholder: @sample[:song], pattern: '^\S+' }
+              placeholder: @sample[:song] }
         .control-group
           .controls
             %input#submit.btn.btn-success{ type: 'submit', value: 'Search' }
