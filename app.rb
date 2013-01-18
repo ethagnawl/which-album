@@ -11,6 +11,12 @@ NO_RESULTS = {message: 'No results!'}
 ERROR = {message: 'Something went wrong, please refresh the page and try again.'}
 GA_ID = ENV['GA_ID'] if ENV['RACK_ENV'] == 'production'
 
+before do
+  if ENV['RACK_ENV'] == 'production' && request.url.split('//')[1][0..3] != "www."
+    redirect "www.#{request.url}", 301
+  end
+end
+
 get '/' do
   @sample = [
     {
