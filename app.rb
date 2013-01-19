@@ -44,7 +44,7 @@ get '/search' do
     escaped_song = URI::escape(params[:song])
     response = HTTParty.get(API_URL + escaped_song)
 
-    if !response
+    if !response || response.empty?
       ERROR.to_json
     else
       results = response['tracks'].find_all do |t|
