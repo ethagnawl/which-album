@@ -13,7 +13,7 @@ GA_ID = ENV['GA_ID'] if ENV['RACK_ENV'] == 'production'
 
 before do
   if ENV['RACK_ENV'] == 'production' && request.url.split('//')[1][0..3] != "www."
-    redirect "www.#{request.path}", 301
+    redirect "#{request.scheme}://www.#{request.host}" , 301
   end
 end
 
